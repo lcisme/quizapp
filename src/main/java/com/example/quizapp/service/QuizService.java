@@ -46,19 +46,6 @@ public class QuizService {
         return new ResponseEntity<>(questionsForUser, HttpStatus.OK);
     }
 
-//    public ResponseEntity<Long> calculateResult(Long id, List<Response> responses) {
-//        Quiz quiz = quizRepository.findById(id).get();
-//        List<Question> questions = quiz.getQuestions();
-//        long right = 0;
-//        int i = 0 ;
-//        for (Response response : responses ){
-//            if (response.getResponse().equals(questions.get(i).getRightAnswer())) {
-//                right++;
-//                i++;
-//            }
-//        }
-//        return new ResponseEntity<>(right,HttpStatus.OK);
-//    }
 
     public ResponseEntity<Long> calculateResult(Long id, List<Response> responses) {
         Quiz quiz = quizRepository.findById(id).orElse(null);
